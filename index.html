@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Fundamentals</title>
+  <title>AI Writeup</title>
   <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
   <main class="container">
     <section class="content">
-      <h1>Artificial Intelligence Interaction</h1>
+      <h1 id="intro">Artificial Intelligence Interaction</h1>
       <p>
         Artificial Intelligence is a misnomer for what Large Language Models (LLMs) are doing behind the scenes—although, it isn’t a far-off description. LLMs such as OpenAI’s ChatGPT and Google’s Gemini use advanced methods of language processing, but the foundation of a LLM is built on a word-pairing and priority system. My focus is to give the reader a principle understanding of how these systems operate, explain nuances that may not be intuitively understood, and improve interaction between human beings and the artificial intelligence that we’re becoming so dependent on.
       </p>
@@ -45,10 +45,6 @@
         </tbody>
       </table>
 
-      <p>
-        This small amount of data gives Chatbyte an idea of how to respond by prioritizing which words will more likely form a valid response.
-      </p>
-
       <blockquote>
         Chatbyte’s response: “The the the the the the the the dog dog dog dog cut cut cut cut hair hair hair hair cat cat cat scissors scissors scissors with with to.”
       </blockquote>
@@ -67,15 +63,37 @@
         </tbody>
       </table>
 
-      <p>
-        Chatbyte can now see refined patterns:
-        “The” often follows or precedes “dog,” “cat,” or “scissors.”
-        “Cut” often follows “dog” or “cat.”
-      </p>
-
       <blockquote>
         Chatbyte’s response: The dog cuts the dog cuts the dog cuts the cat the dog the cat with scissors the cat the cat.
       </blockquote>
+
+      <p>
+        This still isn’t sufficient. Chatbyte would then tally every group of three words. Then four, then five, six, seven, and so on.
+        Once all the data is collected, Chatbyte compares the data using complex scripting in a common scripting language known as Python.
+      </p>
+
+      <p>
+        With a swish and a flourish, Chatbyte can now use Python’s powerful data analysis features to process how words fit together.
+        Keep in mind that Chatbyte is only knowledgeable about dogs and cats using scissors to cut hair.
+      </p>
+
+      <p>
+        When you train a LLM using unfathomable amounts of sentences, the LLM has even more unimaginable amounts of data to work with.
+      </p>
+
+      <h2 id="terminology">Common Concepts & Terminology</h2>
+      <table class="data-table">
+        <thead><tr><th>Concept</th><th>Terminology</th><th>Concept</th><th>Terminology</th></tr></thead>
+        <tbody>
+          <tr><td>Tallying single words</td><td>Unigram model</td><td>Training on data</td><td>Training Phase</td></tr>
+          <tr><td>Tallying word pairs</td><td>Bigram model</td><td>Refining with specific data</td><td>Fine-tuning</td></tr>
+          <tr><td>Tallying triplets</td><td>Trigram model</td><td>Prompt-based behavior</td><td>Prompt engineering</td></tr>
+          <tr><td>Groups of 4+ words</td><td>n-gram model</td><td>Teaching with labeled data</td><td>Supervised learning</td></tr>
+          <tr><td>Giving words weight</td><td>Token probability distribution</td><td>Making output coherent</td><td>Next-token prediction</td></tr>
+          <tr><td>Filtering unlikely output</td><td>Top-k / top-p sampling</td><td>When AI starts to "click"</td><td>Emergent behavior</td></tr>
+          <tr><td>Using internet-scale data</td><td>Corpus</td><td>Model operation phase</td><td>Inference</td></tr>
+        </tbody>
+      </table>
     </section>
 
     <aside class="callouts">
@@ -84,6 +102,18 @@
         <div>
           <p><strong>To better understand Chatbyte’s perspective:</strong></p>
           <p>Imagine you’re in a library. None of the books are in a language you understand. Your only way out is to construct a passphrase using patterns you've seen in other books. The AI does this every time it replies.</p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <span class="callout-icon">💡</span>
+        <div>
+          <p><strong>This example is simplified.</strong></p>
+          <ul>
+            <li>Words like "help" and "helps" are tallied separately</li>
+            <li>"The" and "the" are not the same</li>
+            <li>Punctuation matters—“scissors” ≠ “scissors.”</li>
+          </ul>
         </div>
       </div>
     </aside>
