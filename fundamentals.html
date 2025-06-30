@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Fundamentals</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="content">
+      <h1>Artificial Intelligence Interaction</h1>
+      <p>
+        Artificial Intelligence is a misnomer for what Large Language Models (LLMs) are doing behind the scenes—although, it isn’t a far-off description. LLMs such as OpenAI’s ChatGPT and Google’s Gemini use advanced methods of language processing, but the foundation of a LLM is built on a word-pairing and priority system. My focus is to give the reader a principle understanding of how these systems operate, explain nuances that may not be intuitively understood, and improve interaction between human beings and the artificial intelligence that we’re becoming so dependent on.
+      </p>
+
+      <h2 id="how-llm-learns">How a Simple AI Learns to Talk (Without Understanding Anything)</h2>
+      <p>
+        At its core, LLMs recognize patterns. They don't understand words the way people do.
+        Imagine you're creating a robot named <strong>Chatbyte</strong>. You program Chatbyte with a simple flourish and flick of your hand.
+      </p>
+      <p>
+        Swish, flick. Voilà! Chatbyte has learned how to process data. Now, it's time to teach.
+        You feed four simple sentences to Chatbyte:
+      </p>
+      <ul class="data-list">
+        <li>The dog cuts hair with scissors.</li>
+        <li>The cat helps the dog cut hair.</li>
+        <li>The scissors help the cat and the dog cut hair.</li>
+        <li>The dog and the cat cut hair with scissors to help.</li>
+      </ul>
+
+      <p>
+        Chatbyte's job is to spit out sentences that look like they make sense. With each sentence, the robot is tallying every word.
+      </p>
+
+      <table class="data-table">
+        <thead><tr><th>Word</th><th>Count</th><th>Word</th><th>Count</th></tr></thead>
+        <tbody>
+          <tr><td>The</td><td>8</td><td>scissors</td><td>3</td></tr>
+          <tr><td>dog</td><td>4</td><td>cat</td><td>3</td></tr>
+          <tr><td>cut(s)</td><td>4</td><td>help(s)</td><td>3</td></tr>
+          <tr><td>hair</td><td>4</td><td>to</td><td>1</td></tr>
+          <tr><td>with</td><td>2</td><td></td><td></td></tr>
+        </tbody>
+      </table>
+
+      <p>
+        This small amount of data gives Chatbyte an idea of how to respond by prioritizing which words will more likely form a valid response.
+      </p>
+
+      <blockquote>
+        Chatbyte’s response: “The the the the the the the the dog dog dog dog cut cut cut cut hair hair hair hair cat cat cat scissors scissors scissors with with to.”
+      </blockquote>
+
+      <p>
+        Not quite there yet. Now Chatbyte tallies word pairs:
+      </p>
+
+      <table class="data-table">
+        <thead><tr><th>Pair</th><th>Count</th><th>Pair</th><th>Count</th></tr></thead>
+        <tbody>
+          <tr><td>The dog</td><td>4</td><td>with scissors</td><td>2</td></tr>
+          <tr><td>dog cuts</td><td>3</td><td>The cat</td><td>3</td></tr>
+          <tr><td>cuts hair</td><td>4</td><td>cat helps</td><td>1</td></tr>
+          <tr><td>hair with</td><td>2</td><td>help the</td><td>2</td></tr>
+        </tbody>
+      </table>
+
+      <p>
+        Chatbyte can now see refined patterns:
+        “The” often follows or precedes “dog,” “cat,” or “scissors.”
+        “Cut” often follows “dog” or “cat.”
+      </p>
+
+      <blockquote>
+        Chatbyte’s response: The dog cuts the dog cuts the dog cuts the cat the dog the cat with scissors the cat the cat.
+      </blockquote>
+    </section>
+
+    <aside class="callouts">
+      <div class="callout">
+        <span class="callout-icon">💡</span>
+        <div>
+          <p><strong>To better understand Chatbyte’s perspective:</strong></p>
+          <p>Imagine you’re in a library. None of the books are in a language you understand. Your only way out is to construct a passphrase using patterns you've seen in other books. The AI does this every time it replies.</p>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
